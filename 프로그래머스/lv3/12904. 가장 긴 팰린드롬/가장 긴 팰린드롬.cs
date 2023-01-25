@@ -2,9 +2,9 @@ public class Solution {
     public int solution(string s) {
         int answer = 1;
 
-        for(int i = 1; i < s.Length - 1; ++i)
+        // 홀수
+        for (int i = 1; i < s.Length - 1; ++i)
         {
-            // 홀수
             int currentLength = 1;
             bool isPalindrome = false;
             while (true)
@@ -30,10 +30,13 @@ public class Solution {
                 if (palindromeLength == s.Length)
                     break;
             }
+        }
 
-            // 짝수
-            currentLength = 0;
-            isPalindrome = false;
+        // 짝수
+        for (int i = 0; i < s.Length - 1; ++i)
+        {
+            int currentLength = 0;
+            bool isPalindrome = false;
             while (true)
             {
                 if (i - currentLength < 0 || i + currentLength + 1 > s.Length - 1)
