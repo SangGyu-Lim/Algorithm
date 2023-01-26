@@ -3,15 +3,15 @@
 
 using namespace std;
 
-#define LEFT_BRACKET "("
-#define RIGHT_BRACKET ")"
+#define LEFT_BRACKET '('
+#define RIGHT_BRACKET ')'
 
-void SetBracket(int leftCount, int rightCount, vector<string> str, vector<string>* answer)
+void SetBracket(int leftCount, int rightCount, vector<char> str, vector<string>* answer)
 {
 	if (leftCount == 0 && rightCount == 0)
 	{
 		string temp = "";
-		vector<string>::iterator iter = str.begin();
+		vector<char>::iterator iter = str.begin();
 		for (; iter != str.end(); ++iter)
 		{
 			temp += *iter;
@@ -46,12 +46,11 @@ void SetBracket(int leftCount, int rightCount, vector<string> str, vector<string
 			SetBracket(leftCount, rightCount - 1, str, answer);
 		}
 	}
-
 }
 
 int solution(int n) {
     vector<string> answer = {};
-	vector<string> temp = {};
+	vector<char> temp = {};
 
 	SetBracket(n, n, temp, &answer);
 
